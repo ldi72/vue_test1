@@ -2,12 +2,9 @@
 <div>
     <textarea readonly rows="30" v-model="review"></textarea>
     <br>
-    <label>Сообщение:</label>
+    <label>Введите сообщение:</label>
     <br>
-    <input id="submitText" v-model="submitText">
-    <!--input type="submit" value="Отпарвить-->
-    <br>
-    <button v-on:click="submitClick">Отправить</button>
+    <input  @keyup.enter="submitClick" ref="submitText">
 </div>
 </template>
 
@@ -17,26 +14,27 @@ export default {
   name: 'App',
   data () {
     return {
-      review: '',
-      submitText: ''
+      review: ''
     }
   },
   methods: {
     submitClick () {
-      document.getElementById('submitText').focus()
-            
-      if (this.submitText === '') return
-
-      var now = new Date()      
-      const formatDateTime = ('0' + now.getDate().toString()).slice(-2) + '.' +
-        ('0' + (now.getMonth() + 1).toString()).slice(-2) + '.' +
-        now.getFullYear().toString() + ' ' +
-        ('0' + now.getHours().toString()).slice(-2) + ':' +
-        ('0' + now.getMinutes().toString()).slice(-2) + ':' +
-        ('0' + now.getSeconds().toString()).slice(-2) + '\n'
+      this.$refs.submitText.focus();
       
-      this.review += formatDateTime + this.submitText + '\n\n'
-      this.submitText = ''
+      if (this.$refs.submitText.value === '') return
+
+      let now = new Date()    
+      let formatter = new Intl.DateTimeFormat("ru", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric"
+      })  
+      const formatDateTime = formatter.format(now) + '\n';
+      this.review += formatDateTime + this.$refs.submitText.value + '\n\n'
+      this.$refs.submitText.value = null
     }
   }
 }
@@ -51,5 +49,6 @@ html, body, #app {
 }
   textarea, input {
     width: 50%;
+    border-radius: 8px;
   }
 </style>
