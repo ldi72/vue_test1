@@ -1,10 +1,16 @@
 <template>
-<div>
-    <textarea readonly rows="30" v-model="review"></textarea>
-    <br>
-    <label>Введите сообщение:</label>
-    <br>
-    <input  @keyup.enter="submitClick" ref="submitText">
+<div class="mesBox">
+  <div class="mesList">
+    <!--div v-if="submitTextArray && submitTextArray.length"-->
+    <p v-for="item in submitTextArray" v-bind:key="item.mesDateTime">
+      {{ item.mesDateTime }} <br> {{ item.mes }} <br><br>
+    </p>
+    <br><br>
+    <!--/div-->
+  </div>
+  <label>Введите сообщение:</label>
+  <br>
+  <input  @keyup.enter="submitClick" ref="submitText">
 </div>
 </template>
 
@@ -14,7 +20,7 @@ export default {
   name: 'App',
   data () {
     return {
-      review: ''
+      submitTextArray: []
     }
   },
   methods: {
@@ -23,8 +29,8 @@ export default {
       
       if (this.$refs.submitText.value === '') return
 
-      let now = new Date()    
-      let formatter = new Intl.DateTimeFormat("ru", {
+      const now = new Date()    
+      const formatter = new Intl.DateTimeFormat("ru", {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -32,23 +38,31 @@ export default {
         minute: "numeric",
         second: "numeric"
       })  
-      const formatDateTime = formatter.format(now) + '\n';
-      this.review += formatDateTime + this.$refs.submitText.value + '\n\n'
-      this.$refs.submitText.value = null
+      this.submitTextArray.push({mesDateTime: formatter.format(now), mes: this.$refs.submitText.value})
+       console.log(this.submitTextArray)
+      this.$refs.submitText.value = ''
     }
   }
 }
 </script>
 
 <style>
-html, body, #app {
+html, body, #app, .mesBox {
   padding: 0;
   margin: 0;
   width: 100%;
   height: 100%;
 }
-  textarea, input {
+
+  input {
     width: 50%;
+    border-radius: 8px;
+  }
+  .mesList{
+    border: 2px solid lightgray;
+    overflow: hidden auto;
+    width: 50%;
+    height: 80%;
     border-radius: 8px;
   }
 </style>
