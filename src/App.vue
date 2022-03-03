@@ -57,12 +57,15 @@ html, body, #app, .mesBox {
   input {
     width: 50%;
     border-radius: 8px;
+    background-color: aquamarine;
+    font-size: large;
   }
   .mesList{
-    border: 2px solid lightgray;
+    border: 2px solid black;
     overflow: hidden auto;
     width: 50%;
     height: 80%;
     border-radius: 8px;
+    background-color: lightgrey;
   }
 </style>
