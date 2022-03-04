@@ -7,10 +7,17 @@
     <svg viewBox="0 0 24 24" class="Menu"><path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z"></path></svg>
   </header>
   <div class="mesList">
-    <p v-for="item in submitTextArray" v-bind:key="item.mesDateTime">
-      {{ item.mesDateTime }} <br> {{ item.mes }} <br><br>
-    </p>
-    <br><br>
+    <div v-for="item in submitTextArray" v-bind:key="item.mesDateTime">
+      <div class="blokMes">
+        <div class="textMes">
+          {{ item.mes }}
+        </div>
+        <div class="timeMes">
+          {{ item.mesDateTime }}
+          <svg viewBox="0 0 16 15" width="16" height="15" class=""><path fill="currentColor" d="m15.01 3.316-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
+        </div>
+      </div>
+    </div>
   </div>
   <footer>
   <div class="footBlock">
@@ -42,12 +49,12 @@ export default {
 
       const now = new Date()    
       const formatter = new Intl.DateTimeFormat("ru", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
+        //year: "numeric",
+        //month: "long",
+        //day: "numeric",
         hour: "numeric",
         minute: "numeric",
-        second: "numeric"
+        //second: "numeric"
       })  
       this.submitTextArray.push({mesDateTime: formatter.format(now), mes: this.$refs.submitText.value})
        // console.log(this.submitTextArray)
@@ -117,6 +124,23 @@ export default {
     overflow: hidden auto;
     width: 100%;
     height: calc(100vh - 140px);
+  }
+  .blokMes {
+    background-color:lightgreen;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    width: calc(40vw - 140px);
+    overflow-wrap: break-word;
+    border-radius: 8px;
+  }
+  .textMes {
+    margin: 8px;
+  }
+  .timeMes {
+    text-align: right;
+    margin-right: 8px;
+    font-size: small;
+    padding-bottom: 5px;
   }
 
   footer {
