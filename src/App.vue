@@ -77,7 +77,7 @@ export default {
     margin: 5px;
     border: 2px solid;
     width: 40%;
-    height: 95%;
+    height: calc(100vh - 10px);
     border-radius: 10px;
     font-Family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
     color: var(--primary);
@@ -116,11 +116,11 @@ export default {
     background-Image: url(./assets/background-whatsapp.png);
     overflow: hidden auto;
     width: 100%;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 140px);
   }
 
   .footer {
-    height: 70px;
+    height: 60px;
     width: 100%;
   }
   .footBlock { 
