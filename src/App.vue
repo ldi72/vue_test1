@@ -69,6 +69,7 @@ export default {
   --primary: #3b4a54;
   --app-background: #eae6df;
   --app-background-deeper: #d1d7db;
+  --outgoing-background: #d9fdd3;
 }
   * {
     box-sizing: border-box;
@@ -126,7 +127,7 @@ export default {
     height: calc(100vh - 140px);
   }
   .blokMes {
-    background-color:lightgreen;
+    background-color: var(--outgoing-background);
     margin-left: 100px;
     margin-bottom: 10px;
     width: calc(40vw - 140px);
@@ -135,6 +136,7 @@ export default {
   }
   .textMes {
     margin: 8px;
+    vertical-align: initial;
   }
   .timeMes {
     text-align: right;
@@ -163,7 +165,9 @@ export default {
     width: 100%;
     border: none;
     outline: none;    
-    font-size: large;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
     font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
   }
   .clip, .smiley {
