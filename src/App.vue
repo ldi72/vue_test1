@@ -9,8 +9,13 @@
     <!--/div-->
   </div>
   <label>Введите сообщение:</label>
-  <br>
-  <input  @keyup.enter="submitClick" ref="submitText">
+  <div class="inpMes">
+    <input  @keyup.enter="submitClick" ref="submitText">
+    <i class="icon-smile">😊</i>
+    <i class="icon-attach">
+      <img src="https://www.pngrepo.com/png/7884/180/attachment.png" intrinsicsize="512 x 512" width="20" height="20">
+    </i>
+    </div>
 </div>
 </template>
 
@@ -39,7 +44,7 @@ export default {
         second: "numeric"
       })  
       this.submitTextArray.push({mesDateTime: formatter.format(now), mes: this.$refs.submitText.value})
-       console.log(this.submitTextArray)
+       // console.log(this.submitTextArray)
       this.$refs.submitText.value = ''
     }
   }
@@ -47,7 +52,7 @@ export default {
 </script>
 
 <style>
-html, body, #app, .mesBox {
+html, body, #app {
   padding: 0;
   margin: 0;
   width: 100%;
@@ -55,17 +60,26 @@ html, body, #app, .mesBox {
 }
 
   input {
-    width: 50%;
+    width: 90%;
     border-radius: 8px;
     background-color: aquamarine;
     font-size: large;
   }
-  .mesList{
-    border: 2px solid black;
-    overflow: hidden auto;
+  .mesBox {
+    border: 2px solid;
     width: 50%;
-    height: 80%;
+    height: 95%;
     border-radius: 8px;
     background-color: lightgrey;
+  }
+  .mesList{
+    overflow: hidden auto;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 90%;
+  }
+  .icon-attach {
+    margin-left: 10px;
   }
 </style>
