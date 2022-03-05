@@ -1,24 +1,28 @@
+<!-- eslint-disable -->
 <template>
 <div class="mesBox">
+  
   <header>
     <svg viewBox="0 0 212 212" class="Prof"><path fill="#DFE5E7" class="background" d="M106.251.5C164.653.5 212 47.846 212 106.25S164.653 212 106.25 212C47.846 212 .5 164.654.5 106.25S47.846.5 106.251.5z"></path><g fill="#FFF"><path class="primary" d="M173.561 171.615a62.767 62.767 0 0 0-2.065-2.955 67.7 67.7 0 0 0-2.608-3.299 70.112 70.112 0 0 0-3.184-3.527 71.097 71.097 0 0 0-5.924-5.47 72.458 72.458 0 0 0-10.204-7.026 75.2 75.2 0 0 0-5.98-3.055c-.062-.028-.118-.059-.18-.087-9.792-4.44-22.106-7.529-37.416-7.529s-27.624 3.089-37.416 7.529c-.338.153-.653.318-.985.474a75.37 75.37 0 0 0-6.229 3.298 72.589 72.589 0 0 0-9.15 6.395 71.243 71.243 0 0 0-5.924 5.47 70.064 70.064 0 0 0-3.184 3.527 67.142 67.142 0 0 0-2.609 3.299 63.292 63.292 0 0 0-2.065 2.955 56.33 56.33 0 0 0-1.447 2.324c-.033.056-.073.119-.104.174a47.92 47.92 0 0 0-1.07 1.926c-.559 1.068-.818 1.678-.818 1.678v.398c18.285 17.927 43.322 28.985 70.945 28.985 27.678 0 52.761-11.103 71.055-29.095v-.289s-.619-1.45-1.992-3.778a58.346 58.346 0 0 0-1.446-2.322zM106.002 125.5c2.645 0 5.212-.253 7.68-.737a38.272 38.272 0 0 0 3.624-.896 37.124 37.124 0 0 0 5.12-1.958 36.307 36.307 0 0 0 6.15-3.67 35.923 35.923 0 0 0 9.489-10.48 36.558 36.558 0 0 0 2.422-4.84 37.051 37.051 0 0 0 1.716-5.25c.299-1.208.542-2.443.725-3.701.275-1.887.417-3.827.417-5.811s-.142-3.925-.417-5.811a38.734 38.734 0 0 0-1.215-5.494 36.68 36.68 0 0 0-3.648-8.298 35.923 35.923 0 0 0-9.489-10.48 36.347 36.347 0 0 0-6.15-3.67 37.124 37.124 0 0 0-5.12-1.958 37.67 37.67 0 0 0-3.624-.896 39.875 39.875 0 0 0-7.68-.737c-21.162 0-37.345 16.183-37.345 37.345 0 21.159 16.183 37.342 37.345 37.342z"></path></g></svg>
     <span class="contName">Олег Крылов</span>
     <svg viewBox="0 0 24 24" class="Lupa"><path fill="currentColor" d="M15.9 14.3H15l-.3-.3c1-1.1 1.6-2.7 1.6-4.3 0-3.7-3-6.7-6.7-6.7S3 6 3 9.7s3 6.7 6.7 6.7c1.6 0 3.2-.6 4.3-1.6l.3.3v.8l5.1 5.1 1.5-1.5-5-5.2zm-6.2 0c-2.6 0-4.6-2.1-4.6-4.6s2.1-4.6 4.6-4.6 4.6 2.1 4.6 4.6-2 4.6-4.6 4.6z"></path></svg>
     <svg viewBox="0 0 24 24" class="Menu"><path fill="currentColor" d="M12 7a2 2 0 1 0-.001-4.001A2 2 0 0 0 12 7zm0 2a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 9zm0 6a2 2 0 1 0-.001 3.999A2 2 0 0 0 12 15z"></path></svg>
   </header>
+  
   <div class="mesList">
-    <div v-for="item in submitTextArray" v-bind:key="item.mesDateTime">
-      <div class="blokMes">
-        <div class="textMes">
+    <div class="inMes" v-for="item in submitTextArray" v-bind:key="item.mesDateTime">
+      <div class="blokMes">        
+        <span class="textMes">
           {{ item.mes }}
-        </div>
+        </span>
         <div class="timeMes">
           {{ item.mesDateTime }}
-          <svg viewBox="0 0 16 15" width="16" height="15" class=""><path fill="currentColor" d="m15.01 3.316-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
+          <svg viewBox="-1 -3 16 15" width="13" height="12" class=""><path fill="currentColor" d="m15.01 3.316-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
         </div>
       </div>
     </div>
   </div>
+  
   <footer>
   <div class="footBlock">
     <div class="inpMes">
@@ -29,6 +33,7 @@
     <svg viewBox="-8 -8 40 40" class="mic"><path fill="currentColor" d="M11.999 14.942c2.001 0 3.531-1.53 3.531-3.531V4.35c0-2.001-1.53-3.531-3.531-3.531S8.469 2.35 8.469 4.35v7.061c0 2.001 1.53 3.531 3.53 3.531zm6.238-3.53c0 3.531-2.942 6.002-6.237 6.002s-6.237-2.471-6.237-6.002H3.761c0 4.001 3.178 7.297 7.061 7.885v3.884h2.354v-3.884c3.884-.588 7.061-3.884 7.061-7.885h-2z"></path></svg>
   </div>
   </footer>
+
 </div>
 </template>
 
@@ -56,7 +61,7 @@ export default {
         minute: "numeric",
         //second: "numeric"
       })  
-      this.submitTextArray.push({mesDateTime: formatter.format(now), mes: this.$refs.submitText.value})
+      this.submitTextArray.push({mesDateTime: formatter.format(now), mes: this.$refs.submitText.value + '   '})
        // console.log(this.submitTextArray)
       this.$refs.submitText.value = ''
     }
@@ -70,6 +75,8 @@ export default {
   --app-background: #eae6df;
   --app-background-deeper: #d1d7db;
   --outgoing-background: #d9fdd3;
+  --message-primary: #111b21;
+  --bubble-meta: #667781;
 }
   * {
     box-sizing: border-box;
@@ -81,7 +88,7 @@ export default {
     height: 100%;
     overflow: hidden;
   }
-    .mesBox {
+  .mesBox {
     margin: 5px;
     border: 2px solid;
     width: 40%;
@@ -126,23 +133,35 @@ export default {
     width: 100%;
     height: calc(100vh - 140px);
   }
+  .inMes {
+    padding-right: 7%;
+    padding-left: 7%;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }  
   .blokMes {
     background-color: var(--outgoing-background);
-    margin-left: 100px;
-    margin-bottom: 10px;
-    width: calc(40vw - 140px);
-    overflow-wrap: break-word;
+    /*width: calc(40vw - 140px);*/
+    max-width: 70%;
+    /*border-top-right-radius: 0;*/
     border-radius: 8px;
+    padding: 6px 7px 8px 9px;
   }
   .textMes {
-    margin: 8px;
-    vertical-align: initial;
+    font-size: 14.2px;
+    line-height: 19px;
+    /*overflow-wrap: break-word;*/
+    white-space: pre-wrap;
+    color: var(--message-primary);
   }
   .timeMes {
-    text-align: right;
-    margin-right: 8px;
-    font-size: small;
-    padding-bottom: 5px;
+    font-size: 0.6875rem;
+    color: var(--bubble-meta);
+    height: 18px;
+    float: right;
+    margin-top: 10px;
   }
 
   footer {
@@ -159,6 +178,7 @@ export default {
     background-color:white;
     border-radius: 20px;
     width: calc(40vw - 70px);
+    max-width: 100%;
     height: 40px;
   }
   input {
@@ -166,7 +186,6 @@ export default {
     border: none;
     outline: none;    
     font-size: 15px;
-    font-weight: 400;
     line-height: 20px;
     font-family: Segoe UI,Helvetica Neue,Helvetica,Lucida Grande,Arial,Ubuntu,Cantarell,Fira Sans,sans-serif;
   }
